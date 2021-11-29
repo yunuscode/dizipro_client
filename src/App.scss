@@ -1,7 +1,22 @@
-.red {
-	font-size: 40px;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-.superlink {
-	color: gold;
+$brendColor: #ffedbb;
+
+ul {
+	list-style: none;
+}
+
+body {
+	background-color: darkgray;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
 }
