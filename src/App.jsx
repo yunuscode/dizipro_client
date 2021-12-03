@@ -1,11 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
 import "./App.scss";
-import Login from "./pages/Login/Login";
+import Registration from "./pages/Registration/Registration";
 
 function App() {
 	return (
 		<BrowserRouter>
-			<Login />
+			<Registration />
 		</BrowserRouter>
 	);
 }
