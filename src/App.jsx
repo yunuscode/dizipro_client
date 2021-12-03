@@ -1,11 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
 import "./App.scss";
-import Registration from "./pages/Registration/Registration";
+import CheckYourEmail from "./pages/CheckYourEmail/CheckYourEmail";
 
 function App() {
 	return (
 		<BrowserRouter>
-			<Registration />
+			<CheckYourEmail />
 		</BrowserRouter>
 	);
 }
