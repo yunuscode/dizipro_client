@@ -5,11 +5,41 @@ import BeeImage from "../../assets/images/bee.png";
 import Input from "../../components/Input/Input";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import RegionsService from "../../services/RegionsService";
 
 export default function Registration() {
-	const [countries] = React.useState(["Uzbekistan", "Kazakhstan", "Russia"]);
+	const [countries, setCountries] = React.useState([]);
+	const [oCountries, setOCountries] = React.useState([]);
 
 	const [countryError, setCountryError] = React.useState(false);
+
+	const getCountries = async () => {
+		let result = await RegionsService.GetAllRegions();
+
+		setOCountries(result?.data?.countries);
+
+		let sort = result?.data?.countries?.map((e) => e.country_name);
+		setCountries(sort);
+	};
+
+	React.useEffect(() => {
+		getCountries();
+
+		return () => {};
+	});
+
+	const submit = (event) => {
+		event.preventDefault();
+		const name = event?.target[0]?.value;
+		const email = event?.target[1]?.value;
+		const password = event?.target[2]?.value;
+		const gender = event?.target[3]?.value ? "male" : "female";
+		const country = oCountries.find(
+			(e) => e.country_name === event?.target[5]?.value
+		);
+
+		console.log(name, email, password, gender, country);
+	};
 
 	return (
 		<div className="registration">
@@ -21,7 +51,7 @@ export default function Registration() {
 					alt=""
 				/>
 				<div className="registration__form-wrapper">
-					<form className="registration__form">
+					<form className="registration__form" onSubmit={submit}>
 						<h2 className="registration__title">Sign Up</h2>
 
 						<div className="registration__form__inputs">
@@ -54,7 +84,11 @@ export default function Registration() {
 
 							<div className="registration__gender__wrapper">
 								<label className="registration__gender__item">
-									<input type="radio" name="gender" />
+									<input
+										type="radio"
+										name="gender"
+										defaultChecked
+									/>
 									<p>Male</p>
 								</label>
 

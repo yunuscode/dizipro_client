@@ -21,7 +21,6 @@ export default function Login() {
 								placeholder="Email"
 								name="email"
 								required
-								error="true"
 							/>
 
 							<Input
@@ -46,7 +45,7 @@ export default function Login() {
 
 							<Link
 								className="login__form__forgot-password-link"
-								to="/signup"
+								to="/registration"
 							>
 								Sign up
 							</Link>
