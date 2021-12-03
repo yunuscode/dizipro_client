@@ -18,4 +18,19 @@ export default class UserService {
 		response = await response.json();
 		return response;
 	}
+
+	static async LoginAccount(email, password) {
+		let response = await fetch(constants.API_URL + "/v1/users", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				user_email: email,
+				user_password: password,
+			}),
+		});
+		response = await response.json();
+		return response;
+	}
 }
