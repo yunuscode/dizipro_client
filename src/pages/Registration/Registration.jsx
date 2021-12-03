@@ -7,10 +7,12 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import RegionsService from "../../services/RegionsService";
 import UserService from "../../services/UserService";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Registration() {
 	const [countries, setCountries] = React.useState([]);
 	const [oCountries, setOCountries] = React.useState([]);
+	const [token, setToken] = useAuth();
 
 	const [countryError, setCountryError] = React.useState(false);
 
@@ -45,7 +47,7 @@ export default function Registration() {
 			country.country_id
 		);
 
-		console.log(response);
+		if (response.data.token) setToken(response.data.token);
 	};
 
 	return (

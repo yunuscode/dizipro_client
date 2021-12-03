@@ -5,7 +5,17 @@ const AuthContext = React.createContext();
 export default AuthContext;
 
 export function AuthProvider({ children }) {
-	const [token, setToken] = React.useState();
+	const [token, setToken] = React.useState(
+		window.localStorage.getItem("token")
+	);
+
+	React.useEffect(() => {
+		if (token) {
+			window.localStorage.setItem("token", token);
+		} else {
+			window.localStorage.removeItem("token");
+		}
+	}, [token]);
 
 	return (
 		<AuthContext.Provider value={{ token, setToken }}>
