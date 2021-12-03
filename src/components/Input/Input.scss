@@ -6,6 +6,12 @@
 	border: 1px solid #bfbbbb;
 	transition: all 0.3s ease-in-out;
 
+	&.error-input {
+		border-color: red !important;
+		color: red;
+		background-color: rgba(255, 0, 0, 0.03);
+	}
+
 	&::placeholder {
 		color: transparent;
 	}
@@ -27,8 +33,28 @@
 		}
 	}
 
+	&.error-input {
+		+ label[data-placeholder] {
+			&:after {
+				color: red;
+			}
+		}
+
+		&:focus,
+		&:valid,
+		&:not(:placeholder-shown) {
+			+ label[data-placeholder] {
+				color: red;
+				&:after {
+					color: red;
+				}
+			}
+		}
+	}
+
 	&:focus,
-	&:valid {
+	&:valid,
+	&:not(:placeholder-shown) {
 		border-color: #00000077;
 
 		+ label[data-placeholder] {

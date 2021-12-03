@@ -2,9 +2,20 @@
 	width: 100%;
 	height: 100vh;
 	background-color: #ffedbb;
+	overflow: hidden;
+
+	&__bee-image {
+		width: 350px;
+		z-index: 2;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-120%);
+	}
 
 	&__main-section {
 		width: 100%;
+		height: 100vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -50,6 +61,7 @@
 		justify-content: center;
 		position: absolute;
 		width: 60%;
+		overflow-y: scroll;
 		background-color: white;
 		height: 100vh;
 		top: 0;
@@ -58,13 +70,133 @@
 		border-radius: 50px 0 0 50px;
 	}
 
+	&__form-wrapper::-webkit-scrollbar {
+		display: none;
+	}
+
 	&__bee-image {
 		z-index: 2;
-		transform: translateX(-70%) translateY(10%);
+		// transform: translateX(-70%) translateY(10%);
 	}
 
 	&__title {
 		font-size: 40px;
 		font-weight: 600;
+	}
+}
+
+@media (max-width: 1185px) {
+	.login {
+		&__bee-image {
+			width: 300px;
+			z-index: 2;
+			// transform: translateX(-70%) translateY(10%);
+		}
+
+		&__form {
+			&__inputs {
+				margin-top: 20px;
+				width: 80%;
+
+				.input__wrapper {
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1020px) {
+	.login {
+		&__bee-image {
+			width: 270px;
+			z-index: 2;
+		}
+	}
+}
+
+@media (max-width: 807px) {
+	.login {
+		&__bee-image {
+			width: 250px;
+			z-index: 2;
+		}
+	}
+}
+
+@media (max-width: 777px) {
+	.login {
+		&__main-section {
+			flex-direction: column;
+		}
+
+		&__form {
+			margin: 0;
+
+			&__inputs {
+				margin-top: 20px;
+				width: 100%;
+
+				.input__wrapper {
+					margin-top: 15px;
+				}
+			}
+
+			button {
+				width: 30%;
+				margin-top: 50px;
+			}
+		}
+
+		&__bee-image {
+			width: 200px;
+			position: absolute;
+			z-index: 0;
+			top: 10%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		&__form-wrapper {
+			display: flex;
+			justify-content: center;
+			position: fixed;
+			width: 100%;
+			bottom: 0;
+			background-color: white;
+			height: 60vh;
+			top: auto;
+			right: 0;
+			border-radius: 50px 50px 0 0;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.login {
+		&__form {
+			width: 90%;
+			justify-content: flex-start;
+			padding-top: 30px;
+			padding-bottom: 50px;
+
+			button {
+				margin-top: 20px;
+			}
+		}
+
+		&__title {
+			font-size: 30px;
+		}
+	}
+}
+
+@media (max-width: 400px) {
+	.login {
+		&__bee-image {
+			width: 180px;
+			z-index: 0;
+			transform: translateX(-50%) translateY(13%);
+		}
 	}
 }
