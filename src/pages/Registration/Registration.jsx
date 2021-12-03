@@ -6,6 +6,7 @@ import Input from "../../components/Input/Input";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import RegionsService from "../../services/RegionsService";
+import UserService from "../../services/UserService";
 
 export default function Registration() {
 	const [countries, setCountries] = React.useState([]);
@@ -15,9 +16,7 @@ export default function Registration() {
 
 	const getCountries = async () => {
 		let result = await RegionsService.GetAllRegions();
-
 		setOCountries(result?.data?.countries);
-
 		let sort = result?.data?.countries?.map((e) => e.country_name);
 		setCountries(sort);
 	};
@@ -26,9 +25,9 @@ export default function Registration() {
 		getCountries();
 
 		return () => {};
-	});
+	}, []);
 
-	const submit = (event) => {
+	const submit = async (event) => {
 		event.preventDefault();
 		const name = event?.target[0]?.value;
 		const email = event?.target[1]?.value;
@@ -38,7 +37,15 @@ export default function Registration() {
 			(e) => e.country_name === event?.target[5]?.value
 		);
 
-		console.log(name, email, password, gender, country);
+		let response = await UserService.CreateUserAccount(
+			name,
+			email,
+			password,
+			gender,
+			country.country_id
+		);
+
+		console.log(response);
 	};
 
 	return (
