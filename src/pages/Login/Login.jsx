@@ -6,21 +6,39 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import UserService from "../../services/UserService";
 import { useAuth } from "../../contexts/AuthContext";
+import React from "react";
 
 export default function Login() {
 	const [token, setToken] = useAuth();
+	const [passwordError, setPasswordError] = React.useState("");
+	const [emailError, setEmailError] = React.useState("");
 
 	const submit = async (event) => {
-		event.preventDefault();
+		try {
+			event.preventDefault();
 
-		let email = event.target[0].value;
-		let password = event.target[1].value;
+			setEmailError("");
+			setPasswordError("");
 
-		if (!(email && password)) return;
+			let email = event.target[0].value;
+			let password = event.target[1].value;
 
-		let res = await UserService.LoginAccount(email, password);
+			if (!(email && password)) return;
 
-		if (res?.data?.token) setToken(res?.data?.token);
+			let res = await UserService.LoginAccount(email, password);
+
+			if (!res?.ok) {
+				if (res?.message?.toLowerCase()?.includes("password")) {
+					setPasswordError("true");
+				} else {
+					setEmailError("true");
+				}
+			}
+
+			if (res?.data?.token) setToken(res?.data?.token);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	return (
@@ -35,16 +53,24 @@ export default function Login() {
 						<div className="login__form__inputs">
 							<Input
 								type="email"
-								placeholder="Email"
+								placeholder={
+									emailError ? "Wrong email" : "Email"
+								}
 								name="email"
 								required
+								error={`${emailError}`}
 							/>
 
 							<Input
 								type="password"
-								placeholder="Password"
+								placeholder={
+									passwordError
+										? "Incorrect password"
+										: "Password"
+								}
 								name="password"
 								required
+								error={`${passwordError}`}
 							/>
 						</div>
 

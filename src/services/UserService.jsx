@@ -30,6 +30,7 @@ export default class UserService {
 				user_password: password,
 			}),
 		});
+
 		response = await response.json();
 		return response;
 	}
