@@ -1,3 +1,9 @@
+import Sidebar from "../../components/Sidebar/Sidebar";
+
 export default function Home() {
-	return <p>Homedasiz</p>;
+	return (
+		<main>
+			<Sidebar />
+		</main>
+	);
 }
