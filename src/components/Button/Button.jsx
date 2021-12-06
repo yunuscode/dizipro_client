@@ -2,7 +2,7 @@ import "./Button.scss";
 
 export default function Button(props) {
 	return (
-		<button className={`button ${props.className}`} {...props}>
+		<button {...props} className={`button ` + (props.className || "")}>
 			{props.children}
 		</button>
 	);

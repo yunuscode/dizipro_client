@@ -3,9 +3,92 @@
 	height: 100vh;
 	background-color: white;
 	padding: 36px;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	z-index: 999;
+
+	&__logo {
+		width: 50%;
+	}
+
+	&__route-list {
+		margin-top: 150px;
+	}
+
+	&__route-item__title {
+		padding-left: 10px;
+		font-weight: 500;
+	}
+
+	&__route-item {
+		margin-bottom: 20px;
+
+		&.active {
+			svg {
+				fill: #008ddd;
+			}
+
+			a {
+				color: #008ddd;
+			}
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			color: #00000066;
+			font-size: 20px;
+		}
+
+		svg {
+			fill: #00000066;
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	&__support-button {
+		svg {
+			width: 25px;
+			height: 25px;
+			fill: #ffffff;
+			margin-right: 10px;
+		}
+
+		p {
+			font-weight: 500;
+		}
+
+		width: 70%;
+
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		margin-top: auto !important;
+	}
 }
 
-.sidebar__route-item {
-	fill: red;
-	opacity: 1;
+@media (max-width: 1126px) {
+	.sidebar {
+		width: 250px;
+	}
+}
+
+@media (max-width: 856px) {
+	.sidebar {
+		width: 200px;
+
+		&__logo {
+			width: 80%;
+		}
+
+		&__support-button {
+			width: 100%;
+		}
+
+		a {
+			font-size: 16px;
+		}
+	}
 }
