@@ -150,3 +150,15 @@
 		}
 	}
 }
+
+@media (max-width: 286px) {
+	.sidebar {
+		&__route-item {
+			a {
+				p {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}
