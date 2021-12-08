@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import NotificationIcon from "../../assets/icons/notification";
 import SearchIcon from "../../assets/icons/search";
 import Input from "../Input/Input";
+import Notification from "../Notification/Notification";
 import SearchDropdown from "../SearchDropdown/SearchDropdown";
 import "./HomeHeader.scss";
 
 export default function HomeHeader() {
 	const [searchOpened, setSearchOpened] = React.useState(false);
+	const [notificationOpened, setNotificationOpened] = React.useState(false);
 
 	return (
 		<header className="home-header">
@@ -31,9 +33,15 @@ export default function HomeHeader() {
 					</button>
 				</li>
 				<li className="home-header__actions-item">
-					<button className="home-header__action-link">
+					<button
+						onClick={() =>
+							setNotificationOpened(!notificationOpened)
+						}
+						className="home-header__action-link"
+					>
 						<NotificationIcon />
 					</button>
+					<Notification opened={notificationOpened} />
 				</li>
 				<li className="home-header__actions-item">
 					<button className="home-header__action-link">
