@@ -5,12 +5,15 @@
 		outline: none;
 		background-color: #fafafa;
 		border: none;
-		transform: scaleX(0);
+		transform: translateX(100%);
 		transform-origin: right;
-		transition: transform 0.5s ease;
+		opacity: 0;
+		transition: transform 0.3s ease, opacity 0.5s ease;
 	}
 
 	.open {
-		transform: scaleX(1);
+		transform: translateX(20%);
+		z-index: 1;
+		opacity: 1;
 	}
 }
