@@ -1,0 +1,19 @@
+.alert {
+	background-color: #008ddd;
+	padding: 16px;
+	font-size: 18px;
+	color: #ffffff;
+	font-weight: 500;
+	position: relative;
+
+	&__close-button {
+		background-color: transparent;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		padding: 5px;
+		position: absolute;
+		top: 5%;
+		right: 3%;
+	}
+}

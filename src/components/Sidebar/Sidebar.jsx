@@ -7,6 +7,7 @@ import OrderProjectIcon from "../../assets/icons/order_project";
 import PaymentsIcon from "../../assets/icons/payments";
 import SupportIcon from "../../assets/icons/support";
 import Button from "../Button/Button";
+import Alert from "../Alert/Alert";
 
 export default function Sidebar() {
 	return (
@@ -44,6 +45,10 @@ export default function Sidebar() {
 					</Link>
 				</li>
 			</ul>
+
+			<Alert>
+				<p>Salom siz chegirmaga ulgurib qoling.</p>
+			</Alert>
 
 			<Button className="sidebar__support-button">
 				<SupportIcon className="sidebar__support-button" />
