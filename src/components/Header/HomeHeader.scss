@@ -1,0 +1,55 @@
+.home-header {
+	width: calc(100% - 300px);
+	position: fixed;
+	right: 0;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 20px;
+	background-color: #ffffff;
+
+	&__title {
+		font-size: 30px;
+		text-transform: uppercase;
+	}
+
+	&__action-link svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	&__actions-list .open button {
+		background-color: #fafafa;
+		margin-left: 0;
+	}
+
+	&__actions-list {
+		display: flex;
+		align-items: center;
+	}
+
+	&__actions-item {
+		display: flex;
+		align-items: center;
+	}
+
+	&__actions-item button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 17px;
+		margin: 0 10px;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		transition: background-color 1s ease-in-out;
+	}
+
+	&__action-profile-img {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+	}
+}

@@ -1,0 +1,16 @@
+.search-dropdown {
+	&__input {
+		padding: 16px;
+		font-size: 18px;
+		outline: none;
+		background-color: #fafafa;
+		border: none;
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 0.5s ease;
+	}
+
+	.open {
+		transform: scaleX(1);
+	}
+}
