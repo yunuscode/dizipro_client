@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import NotificationIcon from "../../assets/icons/notification";
 import SearchIcon from "../../assets/icons/search";
-import Input from "../Input/Input";
 import Notification from "../Notification/Notification";
 import SearchDropdown from "../SearchDropdown/SearchDropdown";
 import "./HomeHeader.scss";

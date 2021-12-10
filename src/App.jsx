@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import "./App.scss";
 import { AuthProvider } from "./contexts/AuthContext";
 import CheckYourEmail from "./pages/CheckYourEmail/CheckYourEmail";

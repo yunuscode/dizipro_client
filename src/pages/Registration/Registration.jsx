@@ -14,6 +14,8 @@ export default function Registration() {
 	const [oCountries, setOCountries] = React.useState([]);
 	const [token, setToken] = useAuth();
 
+	console.log(token);
+
 	const [countryError, setCountryError] = React.useState(false);
 
 	const getCountries = async () => {

@@ -13,6 +13,8 @@ export default function Login() {
 	const [passwordError, setPasswordError] = React.useState("");
 	const [emailError, setEmailError] = React.useState("");
 
+	console.log(token);
+
 	const submit = async (event) => {
 		try {
 			event.preventDefault();
