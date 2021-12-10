@@ -6,6 +6,7 @@ import Input from "../Input/Input";
 import Notification from "../Notification/Notification";
 import SearchDropdown from "../SearchDropdown/SearchDropdown";
 import "./HomeHeader.scss";
+import Logo from "../../assets/images/logo.png";
 
 export default function HomeHeader() {
 	const [searchOpened, setSearchOpened] = React.useState(false);
@@ -14,6 +15,7 @@ export default function HomeHeader() {
 	return (
 		<header className="home-header">
 			<h2 className="home-header__title">Project</h2>
+			<img src={Logo} alt="" className="home-header__logo" />
 
 			<ul className="home-header__actions-list">
 				<li
@@ -23,6 +25,7 @@ export default function HomeHeader() {
 				>
 					<SearchDropdown
 						opened={searchOpened}
+						setSearchOpened={setSearchOpened}
 						placeholder="Search"
 					/>
 					<button
@@ -32,7 +35,7 @@ export default function HomeHeader() {
 						<SearchIcon />
 					</button>
 				</li>
-				<li className="home-header__actions-item">
+				<li className="home-header__actions-item home-header__actions-item-notification">
 					<button
 						onClick={() =>
 							setNotificationOpened(!notificationOpened)

@@ -16,14 +16,14 @@ export default function Sidebar() {
 
 			<ul className="sidebar__route-list">
 				<li className="sidebar__route-item active">
-					<Link>
+					<Link to="/">
 						<DashboardIcon className="sidebar__route-item__icon" />
 						<p className="sidebar__route-item__title">Dashboard</p>
 					</Link>
 				</li>
 
 				<li className="sidebar__route-item">
-					<Link>
+					<Link to="/">
 						<OrderProjectIcon className="sidebar__route-item__icon" />
 						<p className="sidebar__route-item__title">
 							Order a project
@@ -32,14 +32,14 @@ export default function Sidebar() {
 				</li>
 
 				<li className="sidebar__route-item">
-					<Link>
+					<Link to="/">
 						<PaymentsIcon className="sidebar__route-item__icon" />
 						<p className="sidebar__route-item__title">Payments</p>
 					</Link>
 				</li>
 
 				<li className="sidebar__route-item">
-					<Link>
+					<Link to="/">
 						<ProfileIcon className="sidebar__route-item__icon" />
 						<p className="sidebar__route-item__title">Profile</p>
 					</Link>

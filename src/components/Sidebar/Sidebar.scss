@@ -6,7 +6,7 @@
 	display: flex;
 	flex-direction: column;
 	position: fixed;
-	z-index: 999;
+	z-index: 9;
 	border-right: 1px solid #00000033;
 
 	&__logo {
@@ -105,6 +105,10 @@
 		align-items: center;
 		border-right: none;
 		border-top: 1px solid #00000033;
+
+		.alert {
+			display: none;
+		}
 
 		&__route-item__title {
 			padding-left: 0px;

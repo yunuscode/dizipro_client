@@ -11,6 +11,10 @@
 	padding: 15px;
 	background-color: #ffffff;
 
+	&__logo {
+		display: none;
+	}
+
 	&__title {
 		font-size: 30px;
 		text-transform: uppercase;
@@ -57,5 +61,56 @@
 		width: 30px;
 		height: 30px;
 		border-radius: 50%;
+	}
+}
+
+@media (max-width: 1126px) {
+	.home-header {
+		width: calc(100% - 250px);
+	}
+}
+
+@media (max-width: 856px) {
+	.home-header {
+		width: calc(100% - 200px);
+		padding: 10px;
+
+		&__title {
+			font-size: 25px;
+		}
+
+		&__actions-item-notification {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 556px) {
+	.home-header {
+		width: 100%;
+		padding: 5px 10px;
+
+		&__logo {
+			display: inline-block;
+			padding: 5px;
+		}
+
+		&__actions-item button {
+			padding: 10px;
+			margin: 5px;
+		}
+
+		&__actions-list .open button {
+			margin-left: 5px;
+		}
+
+		&__action-profile-img {
+			width: 35px;
+			height: 35px;
+		}
+
+		&__title {
+			display: none;
+		}
 	}
 }
